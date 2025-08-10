@@ -1,66 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- mic check 123 -->
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VitaLink</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <h1>VitaLink</h1>
+    <!-- Animated background particles -->
+    <div class="bg-particles" id="particles"></div>
 
-    <div class="form-container">
-      <!-- Login Form -->
-      <div class="form-box" id="login-form">
+    <header class="landing-header">
+      <h1 class="logo">VitaLink</h1>
+      <p class="tagline">Join VitaLink: Save Lives, Earn Rewards</p>
+      <p class="mission">
+        Connect donors and patients, learn about Thalassemia, and earn badges.
+      </p>
+    </header>
+
+    <main class="form-container">
+      <!-- Log-In Form -->
+      <section class="form-box" id="login-form" aria-label="Log In Form">
         <form onsubmit="goToWebsite(event)">
-          <label for="login-email">Email</label>
-          <input type="email" id="login-email" required />
-
-          <label for="login-password">Password</label>
-          <input type="password" id="login-password" required />
-
-          <button type="submit">Login</button>
-        </form>
-        <div class="toggle-link" onclick="showSignup()">
-          Don't have an account? Sign Up
-        </div>
-      </div>
-
-      <!-- Signup Form -->
-      <div class="form-box hidden" id="signup-form">
-        <form onsubmit="signUp(event)">
-          <label for="signup-username">Username</label>
-          <input type="text" id="signup-username" required />
-
-          <label for="signup-email">Email</label>
-          <input type="email" id="signup-email" required />
-
-          <label for="signup-password">Password</label>
-          <input type="password" id="signup-password" required />
-
-          <label>User Type:</label>
-          <div>
+          <div class="form-group">
+            <label for="login-email">Email<span class="req">*</span></label>
             <input
-              type="radio"
-              id="donor"
-              name="user-type"
-              value="donor"
+              type="email"
+              id="login-email"
               required
+              aria-required="true"
             />
-            <label for="donor">Donor</label>
-            <input type="radio" id="patient" name="user-type" value="patient" />
-            <label for="patient">Patient</label>
+            <div class="input-highlight"></div>
           </div>
 
-          <button type="submit">Sign Up</button>
+          <div class="form-group">
+            <label for="login-password"
+              >Password<span class="req">*</span></label
+            >
+            <input
+              type="password"
+              id="login-password"
+              required
+              aria-required="true"
+            />
+            <div class="input-highlight"></div>
+          </div>
+
+          <button type="submit" class="btn-primary">Log In</button>
+          <a href="#" class="link-secondary" onclick="showRecovery()"
+            >Forgot Password?</a
+          >
         </form>
-        <div class="toggle-link" onclick="showLogin()">
-          Already have an account? Login
-        </div>
-      </div>
-    </div>
+        <p class="toggle-link" onclick="showSignup()">
+          Don't have an account? Sign Up
+        </p>
+      </section>
+
+      <!-- Sign-Up Form -->
+      <section
+        class="form-box hidden"
+        id="signup-form"
+        aria-label="Sign Up Form"
+      >
+        <form onsubmit="signUp(event)">
+          <div class="form-group">
+            <label for="signup-username"
+              >Username<span class="req">*</span></label
+            >
+            <input
+              type="text"
+              id="signup-username"
+              required
+              aria-required="true"
+            />
+            <div class="input-highlight"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-email">Email<span class="req">*</span></label>
+            <input
+              type="email"
+              id="signup-email"
+              required
+              aria-required="true"
+            />
+            <div class="input-highlight"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-password"
+              >Password<span class="req">*</span></label
+            >
+            <input
+              type="password"
+              id="signup-password"
+              required
+              aria-required="true"
+            />
+            <div class="input-highlight"></div>
+          </div>
+
+          <div class="user-type-group">
+            <label class="user-type-label"
+              >User Type<span class="req">*</span></label
+            >
+            <div class="radio-group">
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  id="donor"
+                  name="user-type"
+                  value="donor"
+                  required
+                />
+                <span class="radio-custom"></span>
+                <span class="radio-text">Donor</span>
+              </label>
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  id="patient"
+                  name="user-type"
+                  value="patient"
+                />
+                <span class="radio-custom"></span>
+                <span class="radio-text">Patient</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">Sign Up</button>
+        </form>
+        <p class="toggle-link" onclick="showLogin()">
+          Already have an account? Log In
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <a href="awareness.html" class="footer-link">
+        <span>📚</span>
+        Learn About Thalassemia
+      </a>
+    </footer>
 
     <!-- Firebase SDKs (compat versions for your JS) -->
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
