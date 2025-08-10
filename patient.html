@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patient Dashboard - VitaLink</title>
+  <link rel="stylesheet" href="patient.css" />
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <header>
+    <h1>VitaLink - Patient Dashboard</h1>
+    <button id="logout-btn">Logout</button>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <h2>Welcome, <span id="patient-name"></span></h2>
+      <p>Manage your details, view matched donors, and upload medical reports.</p>
+    </section>
+
+    <section class="dashboard-cards">
+      <div class="card">
+        <h3>Blood Group</h3>
+        <p id="blood-group">—</p>
+      </div>
+      <div class="card">
+        <h3>Next Appointment</h3>
+        <p id="appointment-date">—</p>
+      </div>
+      <div class="card">
+        <h3>Hospital</h3>
+        <p id="hospital-name">—</p>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button onclick="window.location.href='patient-detail.html'">Update My Details</button>
+      <button onclick="uploadReports()">Upload Medical Reports</button>
+      <button onclick="viewDonors()">View Matched Donors</button>
+    </section>
+  </main>
+
+  <script src="patient.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donor Dashboard - VitaLink</title>
+  <link rel="stylesheet" href="donor.css" />
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">🩸 VitaLink - Donor</div>
+    <nav>
+      <a href="#" class="nav-link active">Dashboard</a>
+      <a href="donor-details.html" class="nav-link">My Details</a>
+      <a href="#" class="nav-link">Donation History</a>
+      <a href="#" class="nav-link">Requests Near Me</a>
+      <a href="#" class="nav-link logout" id="logout-link">Log Out</a>
+    </nav>
+  </header>
+
+  <!-- Main Dashboard -->
+  <main class="dashboard">
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="card">
+        <h3>Blood Group</h3>
+        <p id="bloodGroup">--</p>
+      </div>
+      <div class="card">
+        <h3>Last Donation</h3>
+        <p id="lastDonation">--</p>
+      </div>
+      <div class="card">
+        <h3>Next Eligible Date</h3>
+        <p id="nextEligible">--</p>
+      </div>
+      <div class="card">
+        <h3>Total Donations</h3>
+        <p id="totalDonations">0</p>
+      </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="actions">
+      <button onclick="location.href='donor-details.html'">Update My Details</button>
+      <button>See Requests Near Me</button>
+      <button>View Donation History</button>
+    </section>
+  </main>
+
+  <script src="donor.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+/* donor.css - simple clean styling */
+:root {
+  --bg: #f7fafc;
+  --card: #fff;
+  --accent: #0b74da;
+  --muted: #666;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: linear-gradient(90deg,#fff 0,#f2f6fb 100%);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 12px 20px;
+  border-bottom:1px solid #e6eef9;
+}
+
+h1 { margin:0; font-size:18px; color:var(--accent); }
+.user-area { display:flex; gap:10px; align-items:center; }
+
+button { cursor:pointer; }
+
+main { padding: 20px; flex:1; display:flex; justify-content:center; align-items:flex-start; }
+
+.card {
+  width:100%;
+  max-width:760px;
+  background:var(--card);
+  border-radius:10px;
+  padding:18px;
+  box-shadow:0 6px 20px rgba(10,30,60,0.06);
+  border:1px solid #e9f0fb;
+}
+
+.hidden { display:none; }
+
+label {
+  display:block;
+  margin:10px 0;
+  font-size:14px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="date"], select, textarea {
+  width:100%;
+  padding:8px 10px;
+  margin-top:6px;
+  border-radius:6px;
+  border:1px solid #d4e3f7;
+  background:#fbfdff;
+}
+
+textarea { resize:vertical; }
+
+.req { color:#c0392b; margin-left:6px; }
+
+.actions { display:flex; gap:10px; margin-top:12px; }
+.actions button { padding:8px 12px; border-radius:8px; border: none; background:var(--accent); color:white; }
+.actions button#clear-donor { background:#e0e6ef; color:#333; }
+
+.consent { margin-top:8px; display:flex; gap:8px; align-items:center; }
+pre { background:#f3f6fb; padding:10px; border-radius:6px; overflow:auto; max-height:280px; }

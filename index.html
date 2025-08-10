@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VitaLink</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <h1>VitaLink</h1>
+
+  <div class="form-container">
+
+    <!-- Login Form -->
+    <div class="form-box" id="login-form">
+      <form onsubmit="goToWebsite(event)">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" required />
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" required />
+
+        <button type="submit">Login</button>
+      </form>
+      <div class="toggle-link" onclick="showSignup()">Don't have an account? Sign Up</div>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form-box hidden" id="signup-form">
+      <form onsubmit="signUp(event)">
+        <label for="signup-username">Username</label>
+        <input type="text" id="signup-username" required />
+
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" required />
+
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" required />
+
+        <label>User Type:</label>
+        <div>
+          <input type="radio" id="donor" name="user-type" value="donor" required />
+          <label for="donor">Donor</label>
+          <input type="radio" id="patient" name="user-type" value="patient" />
+          <label for="patient">Patient</label>
+        </div>
+
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="toggle-link" onclick="showLogin()">Already have an account? Login</div>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs (compat versions for your JS) -->
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

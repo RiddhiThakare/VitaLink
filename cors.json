@@ -1,0 +1,8 @@
+[
+  {
+    "origin": ["https://vitalink-fc777.web.app"],
+    "method": ["GET", "POST", "PUT", "DELETE", "HEAD"],
+    "maxAgeSeconds": 3600,
+    "responseHeader": ["Content-Type", "x-goog-meta-*", "x-goog-acl", "x-goog-date", "x-goog-expires", "x-goog-signature", "x-goog-encryption-algorithm", "x-goog-encryption-key", "x-goog-encryption-key-sha256", "x-goog-meta-owner", "x-goog-meta-filename"]
+  }
+]
